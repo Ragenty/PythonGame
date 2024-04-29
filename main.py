@@ -40,6 +40,8 @@ strength = 0
 mana = 0
 agility = 0
 luck = 0
+level = 1
+exp = 0
 # Position
 xcor = 0
 ycor = 0
@@ -96,4 +98,4 @@ elif player_class == "healer":
     luck = 15
 
 # Save stats to JSON file
-save_variables_to_json("save.json",user_name=user_name, player_class=player_class, health=health, strength=strength, mana=mana, agility=agility, luck=luck, xcor=xcor, ycor=ycor, time=time, year=year, day=day)
+save_variables_to_json("save.json",user_name=user_name, player_class=player_class, health=health, strength=strength, mana=mana, agility=agility, luck=luck, xcor=xcor, ycor=ycor, time=time, year=year, day=day, level=level, exp=exp)
