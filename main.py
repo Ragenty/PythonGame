@@ -16,6 +16,9 @@ def save_variables_to_json(file_path, **kwargs):
         json.dump(existing_data, json_file, indent=4)
 
 # Variables
+time = 12 # Time is in 24 hour format
+day = 35 # 365 days in a year
+year = 873
 # Stats
 health = 0
 strength = 0
@@ -78,4 +81,4 @@ elif player_class == "healer":
     luck = 15
 
 # Save stats to JSON file
-save_variables_to_json("save.json", health=health, strength=strength, mana=mana, agility=agility, luck=luck, xcor=xcor, ycor=ycor)
+save_variables_to_json("save.json", health=health, strength=strength, mana=mana, agility=agility, luck=luck, xcor=xcor, ycor=ycor, time=time, year=year, day=day)
