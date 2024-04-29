@@ -2,6 +2,7 @@ import random as rand
 import time as tm
 import json
 
+# Functions
 # Function to save variables to JSON
 def save_variables_to_json(file_path, **kwargs):
     try:
@@ -14,6 +15,20 @@ def save_variables_to_json(file_path, **kwargs):
     
     with open(file_path, 'w') as json_file:
         json.dump(existing_data, json_file, indent=4)
+
+def rest(time, day):
+    global year
+    if time >= 24:
+        day += 1
+        time %= 24  # Reset time to be within 24 hours
+    if day >= 365:
+        day %= 365  # Reset day to be within 365 days
+        # Assuming year is a global variable
+        year += 1
+    return time, day
+
+
+    
 
 # Variables
 time = 12 # Time is in 24 hour format
