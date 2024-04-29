@@ -34,7 +34,6 @@ while True:
     print("Please enter a valid option from the given choices.")
 
 # Class Stats
-
 if player_class == "warrior":
   health = 150
   strength = 20
