@@ -28,7 +28,111 @@ def rest(time, day):
     return time, day
 
 
-    
+# Lists / Dictionaries
+starting_towns = [
+    "Amberglade",
+    "Aspenwood",
+    "Bramblewood",
+    "Birchwood",
+    "Briarwood",
+    "Briarthorn",
+    "Cedarcrest",
+    "Dewdrop Valley",
+    "Duskwood",
+    "Ember Hollow",
+    "Emberwood",
+    "Fernhaven",
+    "Frostvale",
+    "Frostfall",
+    "Frostwood",
+    "Goldenleaf",
+    "Hazelwood",
+    "Honeydew",
+    "Lavender Hill",
+    "Maplewood",
+    "Merkwood",
+    "Mistwood",
+    "Misty Hollow",
+    "Moonlit Hollow",
+    "Moonshadow",
+    "Mossy Hollow",
+    "Nightshade",
+    "Oakwood",
+    "Pinecrest",
+    "Riverbend",
+    "Sablewood",
+    "Shadowbrook",
+    "Shadewind",
+    "Shimmering Vale",
+    "Silverbrook",
+    "Silverglade",
+    "Starlight Hollow",
+    "Sunburst Meadow",
+    "Sunflower Grove",
+    "Sunlit Grove",
+    "Sylvan Glen",
+    "Thistlewood",
+    "Thornvale",
+    "Thornwood",
+    "Twilight Vale",
+    "Whispering Oaks",
+    "Whispering Pines",
+    "Whisperwind",
+    "Willowbend",
+    "Willowmere"]
+starting_town_coordinates = {
+    "Amberglade": (14, 29),
+    "Aspenwood": (14, 76),
+    "Bramblewood": (54, 22),
+    "Birchwood": (21, 43),
+    "Briarwood": (58, 56),
+    "Briarthorn": (37, 11),
+    "Cedarcrest": (62, 78),
+    "Dewdrop Valley": (23, 77),
+    "Duskwood": (70, 57),
+    "Ember Hollow": (65, 15),
+    "Emberwood": (42, 88),
+    "Fernhaven": (12, 15),
+    "Frostvale": (26, 99),
+    "Frostfall": (55, 44),
+    "Frostwood": (45, 32),
+    "Goldenleaf": (87, 44),
+    "Hazelwood": (92, 88),
+    "Honeydew": (82, 68),
+    "Lavender Hill": (83, 25),
+    "Maplewood": (31, 87),
+    "Merkwood": (77, 86),
+    "Mistwood": (26, 63),
+    "Misty Hollow": (97, 28),
+    "Moonlit Hollow": (28, 19),
+    "Moonshadow": (92, 11),
+    "Mossy Hollow": (94, 89),
+    "Nightshade": (57, 69),
+    "Oakwood": (29, 47),
+    "Pinecrest": (41, 49),
+    "Riverbend": (52, 91),
+    "Sablewood": (77, 55),
+    "Shadowbrook": (63, 82),
+    "Shadewind": (12, 91),
+    "Shimmering Vale": (99, 76),
+    "Silverbrook": (95, 15),
+    "Silverglade": (60, 35),
+    "Starlight Hollow": (53, 10),
+    "Sunburst Meadow": (75, 99),
+    "Sunflower Grove": (18, 99),
+    "Sunlit Grove": (91, 95),
+    "Sylvan Glen": (82, 40),
+    "Thistlewood": (30, 32),
+    "Thornvale": (88, 60),
+    "Thornwood": (97, 79),
+    "Twilight Vale": (41, 81),
+    "Whispering Oaks": (32, 64),
+    "Whispering Pines": (13, 55),
+    "Whisperwind": (81, 12),
+    "Willowbend": (24, 18),
+    "Willowmere": (59, 70)
+}
+
 
 # Variables
 time = 12 # Time is in 24 hour format
@@ -43,21 +147,25 @@ luck = 0
 level = 1
 exp = 0
 # Position
+starting_town=rand.choice(starting_towns)
 xcor = 0
 ycor = 0
+
 
 # Asks user for basic information
 # Asks user for their user name
 while True:
     try:
         user_name = input("What is your name?  ")
-        if user_name.isalpha():
-            print("Hello ", user_name,".")
+        if user_name.replace(' ', '').isalpha():
+            user_name = ' '.join(word.capitalize() for word in user_name.split())
+            print("Hello", user_name,".")
             break
         else:
             raise TypeError
     except TypeError:
         print("Please enter letters only.")
+
 
 # Asks user what class they choose
 while True:
